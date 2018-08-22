@@ -1,0 +1,36 @@
+
+body {
+    background-image: url("../images/spa.jpg");
+    background-repeat:  repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+h1 {
+    color: rgb(31, 66, 52);
+    text-align: center;
+    padding: 0 0 0 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.main {
+    border: 1px solid black;
+    background: white;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.second {
+    border: 1px solid black;
+    background: white;
+    width: 75%;
+    margin: 0 auto;
+}
+.col {
+    margin-top: 50px;
+}
+.signin-form {
+    width: 80%;
+    margin: 5px auto;
+}

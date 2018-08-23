@@ -1,30 +1,45 @@
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
 var path = require("path");
 
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // HTML GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases the user is shown an HTML page of content
-  // ---------------------------------------------------------------------------
 
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/tables.html"));
+  // Each of the below routes just handles the HTML page that the user gets sent to.
+
+  // index route loads view.html
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
 
-  app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/reserve.html"));
+  // cms route loads cms.html
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cms.html"));
   });
 
-  // If no matching route is found default to home
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+  // blog route loads blog.html
+  app.get("/blog", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
-};
+
+  // authors route loads author-manager.html
+  app.get("/authors", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  });
+
+  app.get('/home', function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/author-manager.html"));;
+  })
+
+  app.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));;
+  })
+}
+
+
+

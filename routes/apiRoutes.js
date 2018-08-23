@@ -1,29 +1,46 @@
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
-// ===============================================================================
-
+var db = require("../models");
 var tableData = require("../data/tableData");
 var waitListData = require("../data/waitinglistData");
 
+module.exports = function (app) {
+  app.get("/api/user", function (req, res) {
+    db.User.findAll({})
+      .then(function (dbUser) {
+        res.json(dbUser);
+      });
+  });
+  app.get("/api/user/:id", function (req, res) {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbUser) {
+        res.json(dbUser);
+      });
+  });
+  app.post("/api/user", function (req, res) {
+    db.User.create({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      username: req.body.username,
+      email: req.body.email,
+      last_login: req.body.last_login
+    })
+  })
 
-// ===============================================================================
-// ROUTING
-// ===============================================================================
 
-module.exports = function(app) {
   // API GET Requests
   // Below code handles when users "visit" a page.
   // In each of the below cases when a user visits a link
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-  app.get("/api/tables", function(req, res) {
+  app.get("/api/tables", function (req, res) {
     res.json(tableData);
   });
 
-  app.get("/api/waitlist", function(req, res) {
+  app.get("/api/waitlist", function (req, res) {
     res.json(waitListData);
   });
 
@@ -35,7 +52,7 @@ module.exports = function(app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  app.post("/api/tables", function(req, res) {
+  app.post("/api/tables", function (req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
@@ -53,7 +70,7 @@ module.exports = function(app) {
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
 
-  app.post("/api/clear", function() {
+  app.post("/api/clear", function () {
     // Empty out the arrays of data
     tableData = [];
     waitListData = [];

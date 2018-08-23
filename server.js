@@ -48,11 +48,9 @@ app.get('/', function (req, res) {
 // =============================================================
 require("./routes/post-api-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require('./routes/auth.js')(app, passport);
-require("./routes/api-routes.js")(app);
 
 // console.log('this is our models!!!!!', models);
 //load passport strategies

@@ -13,16 +13,16 @@ exports.signin = function(req,res){
 
 }
 
-exports.dashboard = function(req,res){
+// exports.dashboard = function(req,res){
 
-	res.render('dashboard'); 
+// 	res.render('dashboard'); 
 
-}
+// }
 
-exports.logout = function(req,res){
+// exports.logout = function(req,res){
 
-  req.session.destroy(function(err) {
-  res.redirect('/');
-  });
+//   req.session.destroy(function(err) {
+//   res.redirect('/');
+//   });
 
-}
+//}

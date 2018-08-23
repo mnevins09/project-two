@@ -10,10 +10,6 @@ module.exports = function (sequelize, Sequelize) {
 			type: Sequelize.STRING,
 			allowNull: false
 		},
-		username: {
-			type: Sequelize.STRING,
-			defaultValue: ""
-		},
 		email: {
 			type: Sequelize.STRING,
 			allowNull: false,

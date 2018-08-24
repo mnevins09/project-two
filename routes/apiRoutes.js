@@ -1,6 +1,6 @@
 var db = require("../models");
-var tableData = require("../data/tableData");
-var waitListData = require("../data/waitinglistData");
+var datesData = require("../data/datesData");
+var appointmentsData = require("../data/appointmentsData");
 
 module.exports = function (app) {
   app.get("/api/user", function (req, res) {
@@ -36,12 +36,12 @@ module.exports = function (app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-  app.get("/api/tables", function (req, res) {
-    res.json(tableData);
+  app.get("/api/dates", function (req, res) {
+    res.json(datesData);
   });
 
-  app.get("/api/waitlist", function (req, res) {
-    res.json(waitListData);
+  app.get("/api/appointments", function (req, res) {
+    res.json(appointmentsData);
   });
 
   // API POST Requests
@@ -52,16 +52,16 @@ module.exports = function (app) {
   // Then the server saves the data to the tableData array)
   // ---------------------------------------------------------------------------
 
-  app.post("/api/tables", function (req, res) {
+  app.post("/api/dates", function (req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
-    if (tableData.length < 5) {
-      tableData.push(req.body);
+    if (datesData.length < 5) {
+      datesData.push(req.body);
       res.json(true);
     }
     else {
-      waitListData.push(req.body);
+      appointmentsData.push(req.body);
       res.json(false);
     }
   });
@@ -72,9 +72,9 @@ module.exports = function (app) {
 
   app.post("/api/clear", function () {
     // Empty out the arrays of data
-    tableData = [];
-    waitListData = [];
+    datesData = [];
+    appointmentsData = [];
 
-    console.log(tableData);
+    console.log(datesData);
   });
 };

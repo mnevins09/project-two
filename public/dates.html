@@ -24,10 +24,10 @@
 							<a class="nav-link" href="/authors">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/blog">Blog</a>
+							<a class="nav-link" href="/reviews">Customer Reviews</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/reserve">Make Appointment</a>
+							<a class="nav-link" href="/appointments">Make Appointment</a>
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
@@ -68,13 +68,13 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
+      <h1 class="text-center"><span class="fa fa-fire"></span> Spa Appointments</h1>
       <hr>
-      <h2 class="text-center">Current Reservations and Waiting List</h2>
+      <h2 class="text-center">Current Appoitments</h2>
       <br>
 
       <div class="text-center">
-        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
+        <a href="/appointments"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Schedule Appointment</button></a>
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
     </div>
@@ -85,18 +85,18 @@
         <!-- Current Tables in Use -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title">Current Reservations</h4>
+            <h4 class="panel-title">Current Appointments</h4>
           </div>
           <div class="panel-body" id="tableSection">
           </div>
         </div>
 
-        <!-- Waiting List Panel -->
+        <!-- Appointments Panel -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title">Waiting List</h4>
+            <h4 class="panel-title">Appointment List</h4>
           </div>
-          <div class="panel-body" id="waitlistSection">
+          <div class="panel-body" id="appointmentsSection">
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
     <footer class="footer">
       <div class="container">
         <p>Control Panel</p>
-        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="#" id="clear">Clear Appointments</a> | <a href="/api/dates">API Table Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -144,7 +144,7 @@
           // Loop through and display each of the customers
           for (var i = 0; i < tableData.length; i++) {
 
-          // Create the HTML Well (Section) and Add the table content for each reserved table
+          // Create the HTML Well (Section) and Add the table content for each appointment
             var tableSection = $("<div>");
             tableSection.addClass("well");
             tableSection.attr("id", "tableWell-" + i + 1);
@@ -159,38 +159,38 @@
         });
     }
 
-    function runWaitListQuery() {
+    function runappointmentsQuery() {
 
       // Here we get the location of the root page.
       // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
       var currentURL = window.location.origin;
 
       // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: currentURL + "/api/waitlist", method: "GET" })
-        .then(function(waitlistData) {
+      $.ajax({ url: currentURL + "/api/appointments", method: "GET" })
+        .then(function(appointmentsData) {
 
         // Here we are logging the URL so we have access to it for troubleshooting
           console.log("------------------------------------");
-          console.log("URL: " + currentURL + "/api/waitlist");
+          console.log("URL: " + currentURL + "/api/appointments");
           console.log("------------------------------------");
 
           // Here we then log the NYTData to console, where it will show up as an object.
-          console.log(waitlistData);
+          console.log(appointmentsData);
           console.log("------------------------------------");
 
           // Loop through and display each of the customers
-          for (var i = 0; i < waitlistData.length; i++) {
+          for (var i = 0; i < appointmentsData.length; i++) {
 
-          // Create the HTML Well (Section) and Add the table content for each reserved table
-            var waitlistSection = $("<div>");
-            waitlistSection.addClass("well");
-            waitlistSection.attr("id", "waitlistWell-" + i + 1);
-            $("#waitlistSection").append(waitlistSection);
+          // Create the HTML Well (Section) and Add the table content for each appoinntment
+            var appointmentsSection = $("<div>");
+           appointmantsSection.addClass("well");
+            appointmentsSection.attr("id", "appointmentsWell-" + i + 1);
+            $("#appointmentsSection").append(appointmentsSection);
 
             var tableNumber = i + 1;
 
             // Then display the remaining fields in the HTML (Section Name, Date, URL)
-            $("#waitlistWell-" + i + 1).append("<h2><span class='label label-primary'>" + tableNumber + "</span> | " + waitlistData[i].customerID + "</h2>");
+            $("#appointmentsWell-" + i + 1).append("<h2><span class='label label-primary'>" + tableNumber + "</span> | " + appointmentsData[i].customerID + "</h2>");
           }
         });
     }
@@ -216,7 +216,7 @@
     // Run Queries!
     // ==========================================
     runTableQuery();
-    runWaitListQuery();
+    runappointmentsQuery();
 
 
 </script>

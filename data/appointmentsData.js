@@ -5,15 +5,15 @@
 // But you could have it be an empty array as well.
 // ===============================================================================
 
-var waitingArray = [
+var appointmentsArray = [
   {
-    customerName: "Saima",
-    customerEmail: "saima@example.com",
+    customerName: "Shadonna",
+    customerEmail: "shadonna@example.com",
     phoneNumber: "000-000-0000",
-    customerID: "saimaCool"
+    customerID: "shadonnaPretty"
   }
 ];
 
 
 // Note how we export the array. This makes it accessible to other files using require.
-module.exports = waitingArray;
+module.exports = appointmentsArray;

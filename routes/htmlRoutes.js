@@ -23,8 +23,8 @@ module.exports = function(app) {
   });
 
   // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  app.get("/reviews", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/reviews.html"));
   });
 
   // authors route loads author-manager.html
@@ -39,6 +39,18 @@ module.exports = function(app) {
   app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));;
   })
+  app.get("/dates", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dates.html"));
+  });
+
+  app.get("/appointments", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/appointments.html"));
+  });
+
+  // If no matching route is found default to home
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
 }
 
 

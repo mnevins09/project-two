@@ -1,8 +1,8 @@
 $(document).ready(function() {
   /* global moment */
 
-  // blogContainer holds all of our posts
-  var blogContainer = $(".blog-container");
+  // reviewsContainer holds all of our posts
+  var reviewsContainer = $(".reviews-container");
   var postCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
@@ -10,7 +10,7 @@ $(document).ready(function() {
   // Variable to hold our posts
   var posts;
 
-  // The code below handles the case where we want to get blog posts for a specific author
+  // The code below handles the case where we want to get reviews posts for a specific author
   // Looks for a query param in the url for author_id
   var url = window.location.search;
   var authorId;
@@ -53,14 +53,14 @@ $(document).ready(function() {
       });
   }
 
-  // InitializeRows handles appending all of our constructed post HTML inside blogContainer
+  // InitializeRows handles appending all of our constructed post HTML inside reviews Container
   function initializeRows() {
-    blogContainer.empty();
+    reviewsContainer.empty();
     var postsToAdd = [];
     for (var i = 0; i < posts.length; i++) {
       postsToAdd.push(createNewRow(posts[i]));
     }
-    blogContainer.append(postsToAdd);
+    reviewsContainer.append(postsToAdd);
   }
 
   // This function constructs a post's HTML
@@ -130,12 +130,12 @@ $(document).ready(function() {
     if (id) {
       partial = " for Author #" + id;
     }
-    blogContainer.empty();
+    reviewsContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
     "'>here</a> in order to get started.");
-    blogContainer.append(messageH2);
+    reviewsContainer.append(messageH2);
   }
 
 });

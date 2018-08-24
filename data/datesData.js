@@ -5,14 +5,14 @@
 // But you could have it be an empty array as well.
 // ===============================================================================
 
-var tableArray = [
+var datesArray = [
   {
-    customerName: "Ahmed",
-    customerEmail: "ahmed@example.com",
-    customerID: "afhaque89",
+    customerName: "Lydia",
+    customerEmail: "lydia@example.com",
+    customerID: "lfhaque89",
     phoneNumber: "000-000-0000"
   }
 ];
 
 // Note how we export the array. This makes it accessible to other files using require.
-module.exports = tableArray;
+module.exports = datesArray;

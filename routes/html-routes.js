@@ -32,16 +32,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
 
-  // dates route loads dates.html
-  app.get("/dates", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/dates.html"));
-  });
-
-  // appointments route loads appointments.html
-  app.get("/appointments", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/appointments.html"));
-  });
-
   app.get('/home', function (req, res) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));;
   })

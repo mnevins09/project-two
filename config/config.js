@@ -3,9 +3,9 @@ require('dotenv').config()
 var config = {
   "development": {
     "username": "root",
-    "password": "Drum2o14@",
+    "password": "mathieu1",
     "database": "spa",
-    "host": "localhost",
+    "host": "root",
     "port": 3306,
     "dialect": "mysql",
     pool: {
@@ -17,17 +17,17 @@ var config = {
   },
   "test": {
     "username": "root",
-    "password": "Drum2o14@",
+    "password": "mathieu1",
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "Drum2o14@",
+    "password": "mathieu1",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
   }

@@ -23,8 +23,8 @@ module.exports = function(app) {
   });
 
   // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  app.get("/reviews", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/reviews.html"));
   });
 
   // authors route loads author-manager.html

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Appointment Page</title>
+  <title>Reservation Page</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -24,10 +24,10 @@
 							<a class="nav-link" href="/authors">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/reviews">Customer Reviews</a>
+							<a class="nav-link" href="/blog">Blog</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/appointments">Make Appointment</a>
+							<a class="nav-link" href="/reserve">Make Appointment</a>
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
@@ -68,13 +68,13 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Coder's Oasis Spa</h1>
+      <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
       <hr>
-      <h2 class="text-center">Make your appointment</h2>
+      <h2 class="text-center">Make your reservation</h2>
       <br>
 
       <div class="text-center">
-        <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Available Dates</button></a>
+        <a href="/tables"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> View Tables</button></a>
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
     </div>
@@ -82,36 +82,36 @@
     <div class="row">
       <div class="col-lg-12">
 
-        <!-- Appointment Page -->
+        <!-- Reservation Page -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Schedule Appointment</h3>
-            <p><h4>Enter your name and contact information below to begin scheduling.</h4></p>
+            <h4 class="panel-title">Table Reservation</h4>
           </div>
           <div class="panel-body">
 
             <form role="form">
 
               <div class="form-group">
-                <label for="appointment-name"><h3>Name</h3></label>
-                <input type="text" class="form-control" id="appointment-name">
-              </div>
-
-              <div class="appointment-phone"><h3>Phone Number</h3></label>
-                <input type="text" class="form-control" id="appointment-phone">
+                <label for="reserve-name">Name</label>
+                <input type="text" class="form-control" id="reserve-name">
               </div>
 
               <div class="form-group">
-                <label for="appointment-email"><h3>Email</h3></label>
-                <input type="text" class="form-control" id="appointment-email">
+                <label for="reserve-phone">Phone Number</label>
+                <input type="text" class="form-control" id="reserve-phone">
               </div>
 
               <div class="form-group">
-                <label for="appointment-unique-id"><h3>Unique ID</h3></label>
-                <input type="text" class="form-control" id="appointment-unique-id">
+                <label for="reserve-email">Email</label>
+                <input type="text" class="form-control" id="reserve-email">
               </div>
 
-              <button type="submit" class="btn btn-success submit">Submit</button>
+              <div class="form-group">
+                <label for="reserve-unique-id">Unique ID</label>
+                <input type="text" class="form-control" id="reserve-unique-id">
+              </div>
+
+              <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
 
           </div>
@@ -119,24 +119,14 @@
 
       </div>
     </div>
-<br>
-<div class="row">
-    <div class="col-md-12 review-container">
-    </div>
-  </div>
-</div>
 
-    <div class="container">
-        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
       </div>
-      <footer class="footer">
-          <div class="container">
-             
-              Copyright Project 2 Group 3 &copy;  
-              
-               
-          </div>
-        </footer>
+    </footer>
+
   </div>
 
 </body>
@@ -144,39 +134,51 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
-  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-  // Our api recognizes the route (/api/dates)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the dates-data.js file or appointmentslist-data.js file
-  $(".submit").on("click", function(event) {
-    event.preventDefault();
-    // Here we grab the form elements
-    var newAppointment = {
-      customerName: $("#appointment-name").val().trim(),
-      phoneNumber: $("#appointment-phone").val().trim(),
-      customerEmail: $("#appointment-email").val().trim(),
-      customerID: $("#appointment-unique-id").val().trim()
-    };
-    console.log(newAppointment);
-    // This line is the magic. It"s very similar to the standard ajax function we used.
-    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a dates is available or not.
-    $.post("/api/dates", newAppointment,
-      function(data) {
-        // If a date is available... tell user they are booked.
-        if (data) {
-          alert("Yay! You are officially booked!");
-        }
-        // If a date is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the waiting list");
-        }
-        // Clear the form when submitting
-        $("#appointment-name").val("");
-        $("#appointment-phone").val("");
-        $("#appointment-email").val("");
-        $("#appointment-unique-id").val("");
-      });
-  });
+
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Here we grab the form elements
+      var newReservation = {
+        customerName: $("#reserve-name").val().trim(),
+        phoneNumber: $("#reserve-phone").val().trim(),
+        customerEmail: $("#reserve-email").val().trim(),
+        customerID: $("#reserve-unique-id").val().trim()
+      };
+
+      console.log(newReservation);
+
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+
+      $.post("/api/tables", newReservation,
+        function(data) {
+
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("Yay! You are officially booked!");
+          }
+
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Sorry you are on the wait list");
+          }
+
+          // Clear the form when submitting
+          $("#reserve-name").val("");
+          $("#reserve-phone").val("");
+          $("#reserve-email").val("");
+          $("#reserve-unique-id").val("");
+
+        });
+
+    });
+
 </script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dates Page</title>
+  <title>Appointments Page</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -103,10 +103,19 @@
     </div>
 
 
+   
+        <div class="container">
+            <p>Control Panel</p>
+            <p><a href="#" id="clear">Clear Appointments</a> | <a href="/api/dates">API Appointments Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        </div>
+      	
+  
     <footer class="footer">
       <div class="container">
-        <p>Control Panel</p>
-        <p><a href="#" id="clear">Clear Appointments</a> | <a href="/api/dates">API Appointments Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+         
+          Copyright Project 2 Group 3 &copy;  
+          
+           
       </div>
     </footer>
 
@@ -117,107 +126,77 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
-
-    // In this code, jQuery is used to "download" the data from our server
-    // We then dynamically display this content in our date. This is very similar to the group projects you just completed.
-    // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
-
-    function runDateQuery() {
-
-      // Here we get the location of the root page.
-      // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
-      var currentURL = window.location.origin;
-
-      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: currentURL + "/api/dates", method: "GET" })
-        .then(function(datesData) {
-
-        // Here we are logging the URL so we have access to it for troubleshooting
-          console.log("------------------------------------");
-          console.log("URL: " + currentURL + "/api/dates");
-          console.log("------------------------------------");
-
-          // Here we then log the NYTData to console, where it will show up as an object.
-          console.log(datesData);
-          console.log("------------------------------------");
-
-          // Loop through and display each of the customers
-          for (var i = 0; i < datesData.length; i++) {
-
-          // Create the HTML Well (Section) and Add the date content for each appointment
-            var dateSection = $("<div>");
-            dateSection.addClass("well");
-            dateSection.attr("id", "dateWell-" + i + 1);
-            $("#dateSection").append(dateSection);
-
-            var dateNumber = i + 1;
-
-
-            // Then display the remaining fields in the HTML (Section Name, Date, URL)
-            $("#dateWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + datesData[i].customerID + "</h2>");
-          }
-        });
-    }
-
-    function runAppointmentsQuery() {
-
-      // Here we get the location of the root page.
-      // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
-      var currentURL = window.location.origin;
-
-      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: currentURL + "/api/appointments", method: "GET" })
-        .then(function(appointmentsData) {
-
-        // Here we are logging the URL so we have access to it for troubleshooting
-          console.log("------------------------------------");
-          console.log("URL: " + currentURL + "/api/appointments");
-          console.log("------------------------------------");
-
-          // Here we then log the NYTData to console, where it will show up as an object.
-          console.log(appointmentsData);
-          console.log("------------------------------------");
-
-          // Loop through and display each of the customers
-          for (var i = 0; i < appointmentsData.length; i++) {
-
-          // Create the HTML Well (Section) and Add the date content for each appoinntment
-            var appointmentsSection = $("<div>");
-           appointmentsSection.addClass("well");
-            appointmentsSection.attr("id", "appointmentsWell-" + i + 1);
-            $("#appointmentsSection").append(appointmentsSection);
-
-            var dateNumber = i + 1;
-
-            // Then display the remaining fields in the HTML (Section Name, Date, URL)
-            $("#appointmentsWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + appointmentsData[i].customerID + "</h2>");
-          }
-        });
-    }
-
-    // This function resets all of the data in our dates. This is intended to let you restart a demo.
-    function cleardate() {
-
-      var currentURL = window.location.origin;
-      $.ajax({ url: currentURL + "/api/clear", method: "POST" });
-
-    }
-
-    $("#clear").on("click", function() {
-      alert("Clearing...");
-      clearDate();
-
-      // Refresh the page after data is cleared
-      location.reload();
-
-    });
-
-
-    // Run Queries!
-    // ==========================================
-    runDateQuery();
-    runAppointmentsQuery();
-
-
+  // In this code, jQuery is used to "download" the data from our server
+  // We then dynamically display this content in our date. This is very similar to the group projects you just completed.
+  // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
+  function runDateQuery() {
+    // Here we get the location of the root page.
+    // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+    var currentURL = window.location.origin;
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: currentURL + "/api/dates", method: "GET" })
+      .then(function(datesData) {
+      // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/dates");
+        console.log("------------------------------------");
+        // Here we then log the NYTData to console, where it will show up as an object.
+        console.log(datesData);
+        console.log("------------------------------------");
+        // Loop through and display each of the customers
+        for (var i = 0; i < datesData.length; i++) {
+        // Create the HTML Well (Section) and Add the date content for each appointment
+          var dateSection = $("<div>");
+          dateSection.addClass("well");
+          dateSection.attr("id", "dateWell-" + i + 1);
+          $("#dateSection").append(dateSection);
+          var dateNumber = i + 1;
+          // Then display the remaining fields in the HTML (Section Name, Date, URL)
+          $("#dateWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + datesData[i].customerID + "</h2>");
+        }
+      });
+  }
+  function runAppointmentsQuery() {
+    // Here we get the location of the root page.
+    // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
+    var currentURL = window.location.origin;
+    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+    $.ajax({ url: currentURL + "/api/appointments", method: "GET" })
+      .then(function(appointmentsData) {
+      // Here we are logging the URL so we have access to it for troubleshooting
+        console.log("------------------------------------");
+        console.log("URL: " + currentURL + "/api/appointments");
+        console.log("------------------------------------");
+        // Here we then log the NYTData to console, where it will show up as an object.
+        console.log(appointmentsData);
+        console.log("------------------------------------");
+        // Loop through and display each of the customers
+        for (var i = 0; i < appointmentsData.length; i++) {
+        // Create the HTML Well (Section) and Add the date content for each appoinntment
+          var appointmentsSection = $("<div>");
+         appointmentsSection.addClass("well");
+          appointmentsSection.attr("id", "appointmentsWell-" + i + 1);
+          $("#appointmentsSection").append(appointmentsSection);
+          var dateNumber = i + 1;
+          // Then display the remaining fields in the HTML (Section Name, Date, URL)
+          $("#appointmentsWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + appointmentsData[i].customerID + "</h2>");
+        }
+      });
+  }
+  // This function resets all of the data in our dates. This is intended to let you restart a demo.
+  function cleardate() {
+    var currentURL = window.location.origin;
+    $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+  }
+  $("#clear").on("click", function() {
+    alert("Clearing...");
+    clearDate();
+    // Refresh the page after data is cleared
+    location.reload();
+  });
+  // Run Queries!
+  // ==========================================
+  runDateQuery();
+  runAppointmentsQuery();
 </script>
 </html>

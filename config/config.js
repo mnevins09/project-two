@@ -3,7 +3,7 @@ require('dotenv').config()
 var config = {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Drum2o14@",
     "database": "spa",
     "host": "localhost",
     "port": 3306,
@@ -17,7 +17,7 @@ var config = {
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Drum2o14@",
     "database": "database_test",
     "host": "127.0.0.1",
     "port": 3306,
@@ -25,7 +25,7 @@ var config = {
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "Drum2o14@",
     "database": "database_production",
     "host": "127.0.0.1",
     "port": 3306,

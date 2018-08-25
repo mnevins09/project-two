@@ -74,7 +74,7 @@
       <br>
 
       <div class="text-center">
-        <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Available Dates</button></a>
+        <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Availablity</button></a>
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
     </div>
@@ -108,7 +108,7 @@
 
               <div class="form-group">
                 <label for="appointment-unique-id"><h3>Unique ID</h3></label>
-                <input type="text" class="form-control" id="appoinntment-unique-id">
+                <input type="text" class="form-control" id="appointment-unique-id">
               </div>
 
               <button type="submit" class="btn btn-success submit">Submit</button>
@@ -123,7 +123,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -166,9 +166,9 @@
             alert("Yay! You are officially booked!");
           }
 
-          // If a date is available... tell user they on the appointment list.
+          // If a date is available... tell user they on the waiting list.
           else {
-            alert("Sorry you are on the appontment list");
+            alert("Sorry you are on the waiting list");
           }
 
           // Clear the form when submitting

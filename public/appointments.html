@@ -74,7 +74,7 @@
       <br>
 
       <div class="text-center">
-        <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Available Dates</button></a>
+        <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Availability</button></a>
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
     </div>
@@ -110,7 +110,15 @@
                 <label for="appointment-unique-id"><h3>Unique ID</h3></label>
                 <input type="text" class="form-control" id="appointment-unique-id">
               </div>
+              <div class="form-group">
+                <label for="appointment-service"><h3>Service</h3></label>
+                <input type="text" class="form-control" id="appointment-service">
+              </div>
 
+              <div class="form-group">
+                <label for="appointment-date"><h3>Date</h3></label>
+                <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,13,14,15,16,17">
+              </div>
               <button type="submit" class="btn btn-success submit">Submit</button>
             </form>
 
@@ -127,7 +135,7 @@
 </div>
 
     <div class="container">
-        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p>
+        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p>
       </div>
       <footer class="footer">
           <div class="container">
@@ -155,7 +163,9 @@
       customerName: $("#appointment-name").val().trim(),
       phoneNumber: $("#appointment-phone").val().trim(),
       customerEmail: $("#appointment-email").val().trim(),
-      customerID: $("#appointment-unique-id").val().trim()
+      customerID: $("#appointment-unique-id").val().trim(),
+      serviceRequest: $("#appointment-service").val().trim(),
+      serviceDate: $("#appointment-date").val().trim()
     };
     console.log(newAppointment);
     // This line is the magic. It"s very similar to the standard ajax function we used.
@@ -177,6 +187,8 @@
         $("#appointment-phone").val("");
         $("#appointment-email").val("");
         $("#appointment-unique-id").val("");
+        $("#appointment-service").val("");
+        $("#appointment-date").val("");
       });
   });
 </script>

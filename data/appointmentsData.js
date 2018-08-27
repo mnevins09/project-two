@@ -10,7 +10,9 @@ var appointmentsArray = [
     customerName: "Shadonna",
     customerEmail: "shadonna@example.com",
     phoneNumber: "000-000-0000",
-    customerID: "shadonnaPretty"
+    customerID: "shadonnaPretty",
+    serviceRequest: "massage",
+    serviceDate: "09/01/2018"
   }
 ];
 

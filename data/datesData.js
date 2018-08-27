@@ -10,7 +10,9 @@ var datesArray = [
     customerName: "Lydia",
     customerEmail: "lydia@example.com",
     customerID: "lfhaque89",
-    phoneNumber: "000-000-0000"
+    phoneNumber: "000-000-0000",
+    serviceRequest: "service",
+    serviceDate: "09/01/2018"
   }
 ];
 

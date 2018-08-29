@@ -1,8 +1,8 @@
 // ===============================================================================
 // DATA
-// Below data will hold all of the reserved tables.
-// Initially we just set it equal to a "dummy" customer.
-// But you could have it be an empty array as well.
+// Below data will hold all of the appointments.
+// We have input a test or "dummy" customer for testing purposes.
+// An empty array would work as well.
 // ===============================================================================
 
 var datesArray = [

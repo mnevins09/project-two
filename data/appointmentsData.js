@@ -1,8 +1,8 @@
 // ===============================================================================
 // DATA
-// Below data will hold all of the waitlist tables.
-// Initially we just set it equal to a "dummy" customer.
-// But you could have it be an empty array as well.
+// Below data will hold all of the appointment data.
+// We have added one "dummy" appointment for testing purposes.
+// An empty array woudl work as well.
 // ===============================================================================
 
 var appointmentsArray = [

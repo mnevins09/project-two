@@ -1,9 +1,12 @@
+//Populates User Reviews 
 $(document).ready(function() {
   /* global moment */
 
   // reviewsContainer holds all of our posts
   var reviewsContainer = $(".review-container");
   var postCategorySelect = $("#category");
+
+  //alert("Enter your name below to create an author account and post your review");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
@@ -71,31 +74,33 @@ $(document).ready(function() {
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
-    var deleteBtn = $("<button>");
-    deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
-    var editBtn = $("<button>");
-    editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
+     //WILL BE USED LATER FOR ADMIN LOGIN 
+    // var deleteBtn = $("<button>");
+    // deleteBtn.text("x");
+    // deleteBtn.addClass("delete btn btn-danger");
+    // var editBtn = $("<button>");
+    // editBtn.text("EDIT");
+    // editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostAuthor = $("<h5>");
-    newPostAuthor.text("Written by: " + post.Author.name);
+    newPostAuthor.text("Reviewer: " + post.Author.name);
     newPostAuthor.css({
       float: "right",
-      color: "blue",
+      color: "green",
       "margin-top":
       "-10px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
-    var newPostBody = $("<p>");
+    var newPostBody = $("<h4>");
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
-    newPostCardHeading.append(deleteBtn);
-    newPostCardHeading.append(editBtn);
+     //WILL BE USED LATER FOR ADMIN LOGIN 
+    // newPostCardHeading.append(deleteBtn);
+    // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostAuthor);
     newPostCardBody.append(newPostBody);

@@ -29,11 +29,12 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/appointments">Make Appointment</a>
 						</li>
-					</ul>
-					<form class="form-inline my-2 my-lg-0">
+          </ul>
+          <!-- WILL BE USED LATER FOR TO ALLOW USERS TO SEARCH SITE -->
+					<!-- <form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
+					</form> -->
 				</div>
 			</nav>
 					<br>
@@ -65,28 +66,35 @@
               </a>
             </div>
             <br>
-  <div class="container">
+  
+    <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Coder's Oasis Spa</h1>
-      <hr>
+      <h1 class="text-center"><span class="fa fa-anchor"></span> Coder's Oasis Spa</h1>
+      <br>
       <h2 class="text-center">Make your appointment</h2>
       <br>
 
       <div class="text-center">
         <a href="/dates"><button class="btn btn-lg btn-success"><span class="fa fa-list-alt"></span> View Availability</button></a>
-        <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
+        <!-- WILL BE MOVED AND USED LATER FOR EASE OF NAVIGATION BACK TO LOGIN SCREEN -->
+        <!-- <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a> -->
       </div>
     </div>
-
+    
+            
+          
+         
+    <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+    <div class="col">
+    <div class="row">
+    <div class="col">
 
         <!-- Appointment Page -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Schedule Appointment</h3>
-            <p><h4>Enter your name and contact information below to begin scheduling.</h4></p>
+            <h1 class="panel-title"><center><bold>Schedule Appointment</bold></center></h1>
           </div>
           <div class="panel-body">
 
@@ -121,31 +129,45 @@
               </div>
               <button type="submit" class="btn btn-success submit">Submit</button>
             </form>
-
+            
           </div>
         </div>
 
       </div>
     </div>
+  </div>
 <br>
+<br>
+
+<!-- <div class="col"> -->
+<div class="zoomin">
+    <img  width="100%" height="100%" src="images/spa6.jpg" />
+    <img width="100%" height="100%" src="images/spa7.jpg" />
+    <br>
+    <img  width="100%" height="100%" src="images/spa3.jpg" />
+    <img  width="100%" height="100%" src="images/spa4.jpg" />
+    <br>
+    <img width="100%" height="100%" src="images/spa8.jpg" />
+    <img  width="100%" height="100%" src="images/spa5.jpg" />
+</div>
+
 <div class="row">
-    <div class="col-md-12 review-container">
+    <div class="col-md-12">
     </div>
   </div>
 </div>
 
-    <div class="container">
-        <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p>
-      </div>
-      <footer class="footer">
-          <div class="container">
-             
-              Copyright Project 2 Group 3 &copy;  
-              
-               
-          </div>
-        </footer>
+<div class="container">
+<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+<!-- <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p> -->
+</div>
+<br>
+<footer class="footer">
+  <div class="container">
+  Copyright Project 2 Group 3 &copy;  
   </div>
+</footer>
+</div>
 
 </body>
 </html>
@@ -155,9 +177,12 @@
   // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
   // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
   // Our api recognizes the route (/api/dates)... and then runs the associated code (found in api-routes.js).
-  // In this case the associated code "saves" the data to the dates-data.js file or appointmentslist-data.js file
+  // In this case the associated code "saves" the data to the datesData.js file or appointmentslistData.js file
+  
+
   $(".submit").on("click", function(event) {
     event.preventDefault();
+
     // Here we grab the form elements
     var newAppointment = {
       customerName: $("#appointment-name").val().trim(),
@@ -170,7 +195,7 @@
     console.log(newAppointment);
     // This line is the magic. It"s very similar to the standard ajax function we used.
     // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // The callback is the response of the server. In our case, we set up code in apiRoutes that "returns" true or false
     // depending on if a dates is available or not.
     $.post("/api/dates", newAppointment,
       function(data) {
@@ -190,5 +215,6 @@
         $("#appointment-service").val("");
         $("#appointment-date").val("");
       });
+      
   });
 </script>

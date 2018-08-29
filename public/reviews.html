@@ -31,8 +31,9 @@
 						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						<!-- WILL BE USED LATER TO ALLOW USERS TO SEARCH THE SITE -->
+						<!-- <input class="form-control mr-sm-2" type="search" placeholder="Search"> -->
+						<!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
 					</form>
 				</div>
 			</nav>
@@ -65,9 +66,10 @@
 				</a>
 			</div>
 			<br>
-			<div class="col">
-				<div class="row top-30">
-						<div class="col-md-6 col-sm-6">
+			<!-- MAY BE USED LATER FOR FUTURE NAVIGATION OF THE SITE -->
+				 <!-- <div class="col">
+				<div class="row top-30"> 
+						 <div class="col-md-6 col-sm-6">
 							<a class="btn btn-default" href="/reviews"><h3><b>View Reviews</b></h3></a>
 						</div>
 						<br>
@@ -75,56 +77,87 @@
 						<div class="col-md-6 col-sm-6">
 							<a class="btn btn-default" href="/cms"><h3><b>Post A Review</b></h3></a>
 						</div>
+					</div>-->
+				<div class="container">
+					<div class="col">
+						<div class="row">
+									<br>
+						<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+						<!-- <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Appointment List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p> -->
+						<div class="jumbotron">
+						<h1 class="text-center"><span class="fa fa-anchor"></span> CODER'S OASIS</h1>
+						<br>
+						<h2 class="text-center">Let us know how we are doing... <BR>THE CODER'S OASIS WANTS YOU TO "EXPRESS" YOURSELF!</h2>
+						<br>
+						<!-- MAY BE USED LATER FOR NAVIGATION OF THE SITE  -->
+						<!-- <div class="text-center">
+								<a href="/dates"><button class="btn btn-lg btn-secondary"><span class="fa fa-list-alt"></span> View Availability</button></a>
+								<a href="/appointments"><button class="btn btn-lg btn-success"><span class="fa fa-credit-card"></span> Make Appointment</button></a>
+							</div> -->
+						</div>
 					</div>
+				</div>
 			<div class="col">
-									
 				<div class="author-container">
-					<h1>Leave a Review About Our Services...</h1>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th># of Posts</th>
-								<th>See Author's Posts</th>
-								<th>New Post</th>
-								<th>Delete Author</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr id="form-row">
-								<form id="author-form">
-									<td colspan="4">
-										<input placeholder="Enter a name" id="author-name" type="text" />
-									</td>
-									<td><button type="submit" class="btn btn-success">Create Author</button>
-									</td>
-								</form>
-							</tr>
-						</tbody>
-					</table>
+					<h2> <CENTER>Enter your name below and Leave a Review About Our Services...</CENTER></h2>
+						<div class="container">
+  							<div class="row">
+    							<div class="col">
+								<table class="table table-striped">
+					<tbody>
+								<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+					<!-- <tr id="form-row">
+							<form id="author-form">
+								<td colspan="4">
+								<input placeholder="Enter a name" id="author-name" type="text">
+								</td>
+								<td><button type="submit" class="btn btn-success">Create Author</button>
+								</td>
+							</form>
+						</tr>
+					</tbody> -->
+					<thead>
+					<tr>
+						<th>Name</th>
+						<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+						<!-- <th># of Posts</th>  -->
+						<th>View Customer Reviews</th>
+						<th>Post A Review</th>
+						<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+						<!-- <th>Delete Author</th> -->
+						</tr>
+					</thead> 
+				</table>
+					<form id="author-form">
+						<td colspan="4">
+						<input placeholder="Enter a name" id="author-name" type="text">
+						</td>
+						<td><button type="submit" class="btn btn-success">Enter Name</button>
+						</td>
+					</form>
+    </div>
+    	<div class="col">
+			<div class="container review">
+				<div class="row">
+					<div class="col-md-6">
+					<a class="btn btn-default" href="/cms"><h3>Post A Review</h3></a>
+					</div>
+					<!-- <div class="col-md-2 col-sm-2">
+					<a class="btn btn-default" href="/authors"><h3>Manage Authors</h3></a>
+					</div> -->
+				</div>
+				<div class="row">
+				  <div class="col review-container">
+			     </div>
 				</div>
 			</div>
 		</div>
-		</d>
-</div>
-</div>
-</div>
-</div>
-  <div class="container review">
-    <div class="row">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/cms"><h3>New Post</h3></a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-default" href="/authors"><h3>Manage Authors</h3></a>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 review-container">
-      </div>
-    </div>
-	</div>
-	<footer>
+  </div>
+					
+		<br>
+		<br>								
+		<footer>
 			<div class="container">
 				Copyright Project 2 Group 3 &copy;  
 			</div>

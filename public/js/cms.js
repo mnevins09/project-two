@@ -1,3 +1,4 @@
+//Populates Authors Table for Customer Reviews
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var bodyInput = $("#body");
@@ -13,6 +14,7 @@ $(document).ready(function() {
   // Sets a flag for whether or not we're updating a post to be false initially
   var updating = false;
 
+   //alert("Confirm post before submitting. Posts cannot be deleted.");
   // If we have this section in our url, we pull out the post id from the url
   // In '?post_id=1', postId is 1
   if (url.indexOf("?post_id=") !== -1) {

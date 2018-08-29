@@ -29,11 +29,12 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/appointments">Make Appointment</a>
 						</li>
-					</ul>
-					<form class="form-inline my-2 my-lg-0">
+          </ul>
+          <!-- WILL BE USED LATER TO ALLOW USERS TO SEARCH WEBSITE -->
+					<!-- <form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-					</form>
+					</form> -->
 				</div>
 			</nav>
 					<br>
@@ -68,14 +69,15 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Spa Appointments</h1>
+      <h1 class="text-center"><span class="fa fa-anchor"></span> Spa Appointments</h1>
       <hr>
       <h2 class="text-center">Current Appointments</h2>
       <br>
 
       <div class="text-center">
         <a href="/appointments"><button class="btn btn-lg btn-success"><span class="fa fa-credit-card"></span> Schedule Appointment</button></a>
-        <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
+        <!-- WILL BE MOVED TO NAVIGATINO AND USED LATER FOR GOING BACK TO LOGIN -->
+        <!-- <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a> -->
       </div>
     </div>
 
@@ -101,12 +103,13 @@
         </div>
       </div>
     </div>
-
+<br>
 
    
         <div class="container">
-            <p>Control Panel</p>
-            <p><a href="#" id="clear">Clear Appointments</a> | <a href="/api/dates">API Appointments Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two.git">GitHub Repo</a></p>
+            <!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
+            <!-- <p>Control Panel</p>
+            <p><a href="#" id="clear">Clear Appointments</a> | <a href="/api/dates">API Appointments Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two.git">GitHub Repo</a></p> -->
         </div>
       	
   
@@ -128,7 +131,7 @@
 <script type="text/javascript">
   // In this code, jQuery is used to "download" the data from our server
   // We then dynamically display this content in our date. This is very similar to the group projects you just completed.
-  // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
+  
   function runDateQuery() {
     // Here we get the location of the root page.
     // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
@@ -152,7 +155,7 @@
           $("#dateSection").append(dateSection);
           var dateNumber = i + 1;
           // Then display the remaining fields in the HTML (Section Name, Date, URL)
-          $("#dateWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + datesData[i].customerID + "</h2>");
+          $("#dateWell-" + i + 1).append("<h2><span class='label label-primary'>" + dateNumber + "</span> | " + datesData[i].customerID + "<br>" + datesData[i].serviceRequest + "<br>" +  datesData[i].serviceDate + "</h2>"+ "<br>");
         }
       });
   }

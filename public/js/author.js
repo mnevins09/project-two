@@ -1,3 +1,4 @@
+//Controls input for Customer Review Data
 $(document).ready(function() {
   // Getting references to the name input and author container, as well as the table body
   var nameInput = $("#author-name");
@@ -38,11 +39,13 @@ $(document).ready(function() {
     var newTr = $("<tr>");
     newTr.data("author", authorData);
     newTr.append("<td>" + authorData.name + "</td>");
+    //WILL BE USED LATER TO POST # OF POSTS BY AUTHOR
     //newTr.append("<td> " + authorData.Posts.length + "</td>");
-    newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-    newTr.append("<td><a href='/reviews?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+    //newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
+    newTr.append("<td><a href='/reviews?author_id=" + authorData.id + "'>View Your Reviews</a></td>");
+    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Post A Review</a></td>");
+    //WILL BE USED LATER FOR ADMIN LOGIN 
+    //newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
     return newTr;
   }
 

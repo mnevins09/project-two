@@ -3,7 +3,7 @@ require('dotenv').config()
 var config = {
   "development": {
     "username": "root",
-    "password": "H@ppy1234",
+    "password": "",
     "database": "spa",
     "host": "localhost",
     "port": 3306,
@@ -29,7 +29,10 @@ var config = {
     "database": "database_production",
     "host": "127.0.0.1",
     "port": 3306,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
+  
+    
   }
 }
 

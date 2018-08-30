@@ -25,11 +25,13 @@ var config = {
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": 3306,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
+    
   }
 }
 

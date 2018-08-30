@@ -1,7 +1,0 @@
-#Database login
-
-LOCALDB_URL=mysql://[root]:
-[H@ppy1234]@[localhost]/[spa]
-
-JAWSDB_URL:https://dashboard.heroku.com/apps/gentle-spire-22874
-

@@ -2,7 +2,7 @@
   "development": {
     "username": "",
     "password": "",
-    "database": "sequelize_burger_db",
+    "database": "spa",
     "host": "",
     "dialect": "mysql"
   },

@@ -46,6 +46,7 @@ module.exports = function(app) {
   app.get("/appointments", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/appointments.html"));
   });
+
 }
 
   

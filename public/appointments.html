@@ -225,6 +225,9 @@
     // Here we grab the form elements
     if (validateForm() === true) {
       var newAppointment = {
+        customerName: $("#appointment-name").val().trim(),
+        phoneNumber: $("#appointment-phone").val().trim(),
+        customerEmail: $("#appointment-email").val().trim(),
         customerID: $("#appointment-unique-id").val().trim(),
         serviceRequest: $("#appointment-service").val().trim(),
         serviceDate: $("#appointment-date").val().trim()
@@ -235,27 +238,30 @@
       // The callback is the response of the server. In our case, we set up code in apiRoutes that "returns" true or false
       // depending on if a dates is available or not.
       $.post("/api/dates", newAppointment, function (data) {
+        $("#appointment-name").text(data.customerName);
+        $("#appointment-phone").number(data.phoneNumber);
+        $("#appointment-email").text(data.customerEmail);
         $("#appointment-unique-id").text(data.customerID);
-          $("#appointment-service").text(data.serviceRequest);
-          $("#appointment-date").text(data.serviceRequest);
+        $("#appointment-service").text(data.serviceRequest);
+        $("#appointment-date").text(data.serviceRequest);
       });
     }
-    
-        // If a date is available... tell user they are booked.
-        // If a date is available... tell user they on the waiting list.
-        else {
-          alert("Please fill out all fields before submitting!");
-        };
-        $("#appointment-name").val("");
-        $("#appointment-phone").val("");
-        $("#appointment-email").val("");
-        $("#appointment-unique-id").val("");
-        $("#appointment-service").val("");
-        $("#appointment-date").val("");
-        return false;
-        // Clear the form when submitting
-      });
 
-    
+    // If a date is available... tell user they are booked.
+    // If a date is available... tell user they on the waiting list.
+    else {
+      alert("Please fill out all fields before submitting!");
+    };
+    $("#appointment-name").val("");
+    $("#appointment-phone").val("");
+    $("#appointment-email").val("");
+    $("#appointment-unique-id").val("");
+    $("#appointment-service").val("");
+    $("#appointment-date").val("");
+    return false;
+    // Clear the form when submitting
+  });
+
+
 
 </script>

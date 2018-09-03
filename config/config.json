@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "mathieu1",
-    "database": "spa",
-    "host": "localhost",
+    "username": "nc5j586y2p0vbjv8",
+    "password": "z3nj68kw3pghllzt",
+    "database": "a1g8meyqmqk3936p",
+    "host": "s554ongw9quh1xjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   },

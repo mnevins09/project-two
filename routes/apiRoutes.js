@@ -43,7 +43,7 @@ module.exports = function (app) {
   app.get("/api/appointments", function (req, res) {
     res.json(appointmentsData);
   });
-
+  
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
   // In each of the below cases, when a user submits form data (a JSON object)

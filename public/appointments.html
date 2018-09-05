@@ -121,34 +121,34 @@
                       <label for="appointment-name">
                         <h3>Name</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-name">
+                      <input type="text" class="form-control" id="appointment-name" required>
                     </div>
 
                     <div class="appointment-phone">
                       <h3>Phone Number</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-phone" placeholder="999-999-9999">
+                      <input type="text" class="form-control" id="appointment-phone" placeholder="999-999-9999" required>
                     </div>
 
                     <div class="form-group">
                       <label for="appointment-email">
                         <h3>Email</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-email" placeholder="example@domain.com">
+                      <input type="text" class="form-control" id="appointment-email" placeholder="example@domain.com" required>
                     </div>
 
                     <div class="form-group">
                       <label for="appointment-unique-id">
                         <h3>Name to Display</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-unique-id">
+                      <input type="text" class="form-control" id="appointment-unique-id" required>
                     </div>
                     <div class="form-group">
                       <label for="appointment-service">
                         <h3>Service</h3>
                       </label>
                       <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2"id="appointment-service">
+                                <select class="custom-select mr-sm-2"id="appointment-service" required>
                                     <option selected>Select an Option:</option>
                                     <option>Massage</option>
                                     <option>Facial</option>
@@ -162,7 +162,7 @@
                       <label for="appointment-date">
                         <h3>Date</h3>
                       </label>
-                      <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,13,14,15,16,17">
+                      <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,13,14,15,16,17" required>
                     </div>
                     <button type="submit" class="btn btn-success submit">Submit</button>
                   </form>

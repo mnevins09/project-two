@@ -71,6 +71,10 @@ $(document).ready(function () {
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newPostCard = $("<div>");
+    newPostCard.css({
+      "margin-bottom": "25px",
+      "margin-top": "25px"
+    })
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
@@ -81,18 +85,32 @@ $(document).ready(function () {
     // var editBtn = $("<button>");
     // editBtn.text("EDIT");
     // editBtn.addClass("edit btn btn-info");
-    var newPostTitle = $("<h2>");
-    var newPostDate = $("<small>");
-    var newPostAuthor = $("<h5>");
-    newPostAuthor.text("Reviewer: " + post.Author.name);
+    var newPostAuthor = $("<u><h5>");
+    newPostAuthor.text(post.Author.name);
     newPostAuthor.css({
-      float: "right",
       color: "green",
       "margin-top": "-10px"
     });
+    var newPostTitle = $("<h5><strong>");
+    newPostTitle.css({
+      color: "navy",
+      "margin-top": "10px"
+    })
+    var newPostDate = $("<h6>");
+    newPostDate.css({
+      "margin-top": "15px",
+      "font-size": "10px",
+      float: "right"
+    })
+    
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
+    newPostCardBody.css({
+      background: "beige",
+
+    })
     var newPostBody = $("<h4>");
+    newPostCardHeading.append(newPostAuthor);
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
@@ -101,7 +119,7 @@ $(document).ready(function () {
     // newPostCardHeading.append(deleteBtn);
     // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
-    newPostCardHeading.append(newPostAuthor);
+    
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);

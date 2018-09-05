@@ -39,12 +39,12 @@ $(document).ready(function() {
     console.log(authorData);
     var newTr = $("<tr>");
     newTr.data("author", authorData);
-    newTr.append("<td><strong>" + "<u>"+ "AUTHOR " + "</u>" + " : " + authorData.name + "</strong></td>");
+    newTr.append("<td><strong>" + "<u>"+ "Reviewer " + "</u>" + " : " + authorData.name + "</strong></td>");
     //WILL BE USED LATER TO POST # OF POSTS BY AUTHOR
     //newTr.append("<td> " + authorData.Posts.length + "</td>");
     //newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
     // newTr.append("<td><a href='/reviews?author_id=" + authorData.id + "'>View Your Reviews</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Post A Review</a></td>");
+    newTr.append("<td><strong><a href='/cms?author_id=" + authorData.id + "'>Post A Review</a></strong></td>");
     //WILL BE USED LATER FOR ADMIN LOGIN 
     //newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
     return newTr;
@@ -64,8 +64,8 @@ $(document).ready(function() {
 
   // A function for rendering the list of authors to the page
   function renderAuthorList(rows) {
-    authorList.children().not(":last").remove();
-    authorContainer.children(".alert").remove();
+    authorList.children().remove(":last").remove();
+    authorContainer.children(".alert");
     if (rows.length) {
       console.log(rows);
       authorList.prepend(rows);

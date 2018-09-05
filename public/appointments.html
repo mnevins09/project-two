@@ -55,13 +55,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="images/th.JPG" alt="First slide">
+        <img class="d-block w-100" src="images/th.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="images/th2.JPG" alt="Second slide">
+        <img class="d-block w-100" src="images/th2.jpg" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="images/th3.JPG" alt="Third slide">
+        <img class="d-block w-100" src="images/th3.jpg" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -127,19 +127,19 @@
                     <div class="appointment-phone">
                       <h3>Phone Number</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-phone">
+                      <input type="text" class="form-control" id="appointment-phone" placeholder="999-999-9999">
                     </div>
 
                     <div class="form-group">
                       <label for="appointment-email">
                         <h3>Email</h3>
                       </label>
-                      <input type="text" class="form-control" id="appointment-email">
+                      <input type="text" class="form-control" id="appointment-email" placeholder="example@domain.com">
                     </div>
 
                     <div class="form-group">
                       <label for="appointment-unique-id">
-                        <h3>Unique ID</h3>
+                        <h3>Name to Display</h3>
                       </label>
                       <input type="text" class="form-control" id="appointment-unique-id">
                     </div>
@@ -249,7 +249,7 @@
       // depending on if a dates is available or not.
       $.post("/api/dates", newAppointment, function (data) {
         $("#appointment-name").text(data.customerName);
-        $("#appointment-phone").number(data.phoneNumber);
+        $("#appointment-phone").text(data.phoneNumber);
         $("#appointment-email").text(data.customerEmail);
         $("#appointment-unique-id").text(data.customerID);
         $("#appointment-service").text(data.serviceRequest);

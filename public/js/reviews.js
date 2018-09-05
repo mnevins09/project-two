@@ -1,5 +1,5 @@
 //Populates User Reviews 
-$(document).ready(function() {
+$(document).ready(function () {
   /* global moment */
 
   // reviewsContainer holds all of our posts
@@ -33,15 +33,15 @@ $(document).ready(function() {
     if (authorId) {
       authorId = "/?author_id=" + authorId;
     }
-    $.get("/api/posts" + authorId, function(data) {
+    $.get("/api/posts" + authorId, function (data) {
       console.log("Posts", data);
       posts = data;
-      if (!posts || !posts.length) {
-        displayEmpty(author);
-      }
-      else {
+      // if (!posts || !posts.length) {
+      //   displayEmpty(author);
+      // }
+      // else {
         initializeRows();
-      }
+      // }
     });
   }
 
@@ -49,9 +49,9 @@ $(document).ready(function() {
   function deletePost(id) {
     $.ajax({
       method: "DELETE",
-      url: "/api/posts/" + id
+      url: "/api/reviews/" + id
     })
-      .then(function() {
+      .then(function () {
         getPosts(postCategorySelect.val());
       });
   }
@@ -74,7 +74,7 @@ $(document).ready(function() {
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
-     //WILL BE USED LATER FOR ADMIN LOGIN 
+    //WILL BE USED LATER FOR ADMIN LOGIN 
     // var deleteBtn = $("<button>");
     // deleteBtn.text("x");
     // deleteBtn.addClass("delete btn btn-danger");
@@ -88,8 +88,7 @@ $(document).ready(function() {
     newPostAuthor.css({
       float: "right",
       color: "green",
-      "margin-top":
-      "-10px"
+      "margin-top": "-10px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
@@ -98,7 +97,7 @@ $(document).ready(function() {
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
-     //WILL BE USED LATER FOR ADMIN LOGIN 
+    //WILL BE USED LATER FOR ADMIN LOGIN 
     // newPostCardHeading.append(deleteBtn);
     // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
@@ -129,18 +128,18 @@ $(document).ready(function() {
   }
 
   // This function displays a message when there are no posts
-  function displayEmpty(id) {
-    var query = window.location.search;
-    var partial = "";
-    if (id) {
-      partial = " for Author #" + id;
-    }
-    reviewsContainer.empty();
-    var messageH2 = $("<h2>");
-    messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
-    "'>here</a> in order to get started.");
-    reviewsContainer.append(messageH2);
-  }
+  // function displayEmpty(id) {
+  //   var query = window.location.search;
+  //   var partial = "";
+  //   if (id) {
+  //     partial = " for Author #" + id;
+  //   }
+  //   reviewsContainer.empty();
+  // var messageH2 = $("<h2>");
+  // messageH2.css({ "text-align": "center", "margin-top": "50px" });
+  // messageH2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
+  // "'>here</a> in order to get started.");
+  // reviewsContainer.append(messageH2);
+  // }
 
 });

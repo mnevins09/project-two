@@ -17,15 +17,16 @@ $(document).ready(function() {
     event.preventDefault();
     // Don't do anything if the name fields hasn't been filled out
     if (!nameInput.val().trim().trim()) {
+      alert("Please enter a name before submitting!")
       return;
     }
     // Calling the upsertAuthor function and passing in the value of the name input
+    else {
     upsertAuthor({
-      name: nameInput
-        .val()
-        .trim()
+      name: nameInput.val().trim()
     });
   }
+}
 
   // A function for creating an author. Calls getAuthors upon completion
   function upsertAuthor(authorData) {
@@ -38,11 +39,11 @@ $(document).ready(function() {
     console.log(authorData);
     var newTr = $("<tr>");
     newTr.data("author", authorData);
-    newTr.append("<td>" + authorData.name + "</td>");
+    newTr.append("<td><strong>" + "<u>"+ "AUTHOR " + "</u>" + " : " + authorData.name + "</strong></td>");
     //WILL BE USED LATER TO POST # OF POSTS BY AUTHOR
     //newTr.append("<td> " + authorData.Posts.length + "</td>");
     //newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-    newTr.append("<td><a href='/reviews?author_id=" + authorData.id + "'>View Your Reviews</a></td>");
+    // newTr.append("<td><a href='/reviews?author_id=" + authorData.id + "'>View Your Reviews</a></td>");
     newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Post A Review</a></td>");
     //WILL BE USED LATER FOR ADMIN LOGIN 
     //newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");

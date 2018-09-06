@@ -167,9 +167,8 @@
                     <label for="appointment-date">
                       <h3>Date</h3>
                     </label>
-                    <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,01,02,03,04,05"
-                      required /> =======
-                    <input type="datetime-local" class="form-control" id="appointment-date" required> >>>>>>> ebedf3d393ec07ee4f098d3df2261e354a45e122
+                    <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,01,02,03,04,05" required
+                    />
                   </div>
                   <input type='submit' name='submit' class="btn btn-success submit" Value='Submit' />
 
@@ -265,7 +264,7 @@
 
 
     if (validateForm() === true) {
-      var formattedDate =  $("#appointment-date").val().trim();
+      var formattedDate = $("#appointment-date").val().trim();
       formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm a");
       var newAppointment = {
         customerName: $("#appointment-name").val().trim(),

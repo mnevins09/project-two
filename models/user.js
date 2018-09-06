@@ -21,9 +21,6 @@ module.exports = function (sequelize, Sequelize) {
 			type: Sequelize.STRING,
 			allowNull: false
 		},
-		last_login: {
-			type: Sequelize.DATE
-		},
 	},
 		{
 			freezeTableName: true,

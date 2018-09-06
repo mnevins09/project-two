@@ -1,15 +1,15 @@
 {
   "development": {
-    "username": "root",
-    "password": "mathieu1",
+    "username": "",
+    "password": "",
     "database": "spa",
-    "host": "localhost",
+    "host": "",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "Drum2o14@",
+    "username": "",
+    "password": "",
     "database": "database_test",
     "host": "127.0.0.1",
     "port": 3306,

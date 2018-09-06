@@ -167,7 +167,7 @@
                       <label for="appointment-date">
                         <h3>Date</h3>
                       </label>
-                      <input type="datetime-local" class="form-control" id="appointment-date" hourValues="08,09,10,11,12,13,14,15,16,17" required>
+                      <input type="datetime-local" class="form-control" id="appointment-date" required>
                     </div>
                     <button type="submit" class="btn btn-success submit">Submit</button>
                   </form>
@@ -211,6 +211,8 @@
       </footer>
     </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+
 </body>
 
 </html>
@@ -239,13 +241,16 @@
     }
     // Here we grab the form elements
     if (validateForm() === true) {
+      var formattedDate =  $("#appointment-date").val().trim();
+      formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm a");
       var newAppointment = {
         customerName: $("#appointment-name").val().trim(),
         phoneNumber: $("#appointment-phone").val().trim(),
         customerEmail: $("#appointment-email").val().trim(),
         customerID: $("#appointment-unique-id").val().trim(),
         serviceRequest: $("#appointment-service").val().trim(),
-        serviceDate: $("#appointment-date").val().trim()
+        serviceDate: formattedDate
+
       };
 
       // This line is the magic. It"s very similar to the standard ajax function we used.
@@ -258,7 +263,8 @@
         $("#appointment-email").text(data.customerEmail);
         $("#appointment-unique-id").text(data.customerID);
         $("#appointment-service").text(data.serviceRequest);
-        $("#appointment-date").text(data.serviceRequest);
+        $(formattedDate).text(data.serviceDate);
+
       });
     }
 

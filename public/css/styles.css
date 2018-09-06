@@ -1,3 +1,7 @@
+input.submit {
+  float: right;
+}
+
 button.submit {
   float: right;
 }
@@ -49,7 +53,7 @@ button.edit {
 
 
 body {
-  background-image: url("../images/background.JPG");
+  background-image: url("../images/background.jpg");
 }
 .carousel slide {
   margin-left: 40px;

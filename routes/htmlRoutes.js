@@ -48,9 +48,6 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/appointments.html"))
   });
 
-  router.post ("/api/dates", function (req, res) {
-    res.redirect("/dates");
-  })
 }
 
 

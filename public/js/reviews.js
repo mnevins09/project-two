@@ -40,7 +40,7 @@ $(document).ready(function () {
       //   displayEmpty(author);
       // }
       // else {
-        initializeRows();
+      initializeRows();
       // }
     });
   }
@@ -102,7 +102,7 @@ $(document).ready(function () {
       "font-size": "10px",
       float: "right"
     })
-    
+
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     newPostCardBody.css({
@@ -119,7 +119,7 @@ $(document).ready(function () {
     // newPostCardHeading.append(deleteBtn);
     // newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
-    
+
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);

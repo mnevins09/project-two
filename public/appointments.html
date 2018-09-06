@@ -6,16 +6,15 @@
   <title>Appointment Page</title>
 
   <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/authors">
+    <a class="navbar-brand">
       <h1>Coder's Oasis Spa</h1>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
@@ -35,6 +34,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/appointments">Make Appointment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="logout" href="/">Logout</a>
         </li>
       </ul>
       <!-- WILL BE USED LATER FOR TO ALLOW USERS TO SEARCH SITE -->
@@ -148,14 +153,14 @@
                         <h3>Service</h3>
                       </label>
                       <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-                                <select class="custom-select mr-sm-2"id="appointment-service" required>
-                                    <option selected>Select an Option:</option>
-                                    <option>Massage</option>
-                                    <option>Facial</option>
-                                    <option>Hair Cut</option>
-                                    <option>Massage and Facial</option>
-                                    <option>Manicure/Pedicure</option>
-                                </select>
+                      <select class="custom-select mr-sm-2" id="appointment-service" required>
+                        <option selected>Select an Option:</option>
+                        <option>Massage</option>
+                        <option>Facial</option>
+                        <option>Hair Cut</option>
+                        <option>Massage and Facial</option>
+                        <option>Manicure/Pedicure</option>
+                      </select>
                     </div>
 
                     <div class="form-group">
@@ -256,7 +261,7 @@
         $("#appointment-date").text(data.serviceRequest);
       });
     }
-    
+
     // If a date is available... tell user they are booked.
     // If a date is available... tell user they on the waiting list.
     else {
@@ -271,7 +276,7 @@
     return false;
     // Clear the form when submitting
   });
-  
+
 
 
 

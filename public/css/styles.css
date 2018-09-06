@@ -86,3 +86,9 @@ img{
 form {
   border: #666;
 }
+
+#logout {
+  color: green;
+  margin-left: 550px;
+  font-weight: "bold";
+}

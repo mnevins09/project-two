@@ -11,139 +11,162 @@
 </head>
 
 <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="/authors"><h1>Coder's Oasis Spa</h1></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-			
-				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item active">
-							<a class="nav-link" href="/authors">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/reviews">Customer Reviews</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/appointments">Make Appointment</a>
-						</li>
-					</ul>
-					<!-- WILL BE USED LATER TO ALL EASE OF SEARCHING SITE  -->
-					<!-- <form class="form-inline my-2 my-lg-0">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">
+			<h1>Coder's Oasis Spa</h1>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active">
+					<a class="nav-link" href="/home">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/reviews">Customer Reviews</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/appointments">Make Appointment</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="logout" href="/">Logout</a>
+				</li>
+			</ul>
+			<!-- WILL BE USED LATER TO ALL EASE OF SEARCHING SITE  -->
+			<!-- <form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 					</form> -->
-				</div>
-			</nav>
-					<br>
-					<br>
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img class="d-block w-100" src="images/th.jpg" alt="First slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/th2.jpg" alt="Second slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/th3.jpg" alt="Third slide">
-					</div>
-				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="images/th.jpg" alt="First slide">
 			</div>
-			<br>
-			<div class="container">
-				<div class="col">
-			  <div class="row">
+			<div class="carousel-item">
+				<img class="d-block w-100" src="images/th2.jpg" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="images/th3.jpg" alt="Third slide">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<br>
+	<div class="container">
+		<div class="col">
+			<div class="row">
 				<br>
 				<!-- WILL BE USED LATER FOR ADMIN LOGIN  -->
 				<!-- <p><a href="/api/dates">API Appointment Link</a> | <a href="/api/appointments">API Waiting List</a> | <a href="https://github.com/mnevins09/project-two">GitHub Repo</a></p> -->
 				<div class="jumbotron">
-					<h1 class="text-center"><span class="fa fa-anchor"></span> CODER'S OASIS</h1>
+					<h1 class="text-center">
+						<span class="fa fa-anchor"></span> CODER'S OASIS</h1>
 					<hr>
-					<h2 class="text-center">Take a Break from a long day of coding! <BR>LET THE CODER'S OASIS TAKE YOU TO ANOTHER NODE!</h2>
+					<h2 class="text-center">Take a Break from a long day of coding!
+						<BR>LET THE CODER'S OASIS TAKE YOU TO ANOTHER NODE!</h2>
 					<br>
-									  
-				<div class="text-center">
-				<a href="/dates"><button class="btn btn-lg btn-secondary"><span class="fa fa-list-alt"></span> View Availability</button></a>
-				<a href="/appointments"><button class="btn btn-lg btn-success"><span class="fa fa-credit-card"></span> Make Appointment</button></a>
-				</div>
-			</div>
-		</div>
-	</div>
-		<div class="album py-5 bg-light">
-		<div class="container">
-		<div class="row">
-		<div class="col-md-4">
-		<div class="card mb-4 box-shadow">
-			<img class="card-img-top" src="images/spa1.jpg" alt="Spa Image1">
-		<div class="card-body">
-			<p class="card-text">Enjoy feelings of peace and tranquility while experiencing a relaxing facial that will take you to another "node".</p>
-		<div class="d-flex justify-content-between align-items-center">
-		<div class="btn-group">
-			<a href="/appointments"><button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button></a>
-		</div>
-		<small class="text-muted">90 mins</small>
-		</div>
-	</div>
-</div>
-</div>
-	<div class="col-md-4">
-	<div class="card mb-4 box-shadow">
-		<img class="card-img-top" src="images/spa2.jpg" alt="Spa Image2">
-	<div class="card-body">
-		<p class="card-text">Aromatherapy is just the remedy you need to change the "script" of your day to one of solitude and peace.</p>
-	<div class="d-flex justify-content-between align-items-center">
-		<div class="btn-group">
-				<a href="/appointments"><button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button></a>
-			</div>
-				<small class="text-muted">60 mins</small>
-		</div>
-	</div>
-</div>
-</div>
-	<div class="col-md-4">
-		<div class="card mb-4 box-shadow">
-			<img class="card-img-top" src="images/spa4.jpg" alt="Spa Image3">
-		<div class="card-body">
-			<p class="card-text">Experience a rejuvinating pedicure that is sure to give you an "express" ticket to the relaxation you desire.You won't reget it! </p>
-		<div class="d-flex justify-content-between align-items-center">
-			<div class="btn-group">
-				<a href="/appointments"><button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button></a>
-			</div>
-				<small class="text-muted">30 mins</small>
-			</div>
-		</div>
-	</div>
-</div>
-		 <br>
-		 <br>
-			<div class="row">
-				<div class="col-md-12">
-				</div>
-			</div>
-			</div>
-			<footer>
-					<div class="container">
-						Copyright Project 2 Group 3 &copy;  
+
+					<div class="text-center">
+						<a href="/dates">
+							<button class="btn btn-lg btn-secondary">
+								<span class="fa fa-list-alt"></span> View Availability</button>
+						</a>
+						<a href="/appointments">
+							<button class="btn btn-lg btn-success">
+								<span class="fa fa-credit-card"></span> Make Appointment</button>
+						</a>
 					</div>
-				</footer>		
-		
-		<!-- Custom Script -->
-		<script src="js/author.js" type="text/javascript"></script>
+				</div>
+			</div>
+		</div>
+		<div class="album py-5 bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card mb-4 box-shadow">
+							<img class="card-img-top" src="images/spa1.jpg" alt="Spa Image1">
+							<div class="card-body">
+								<p class="card-text">Enjoy feelings of peace and tranquility while experiencing a relaxing facial that will take you to another "node".</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="/appointments">
+											<button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button>
+										</a>
+									</div>
+									<small class="text-muted">90 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card mb-4 box-shadow">
+							<img class="card-img-top" src="images/spa2.jpg" alt="Spa Image2">
+							<div class="card-body">
+								<p class="card-text">Aromatherapy is just the remedy you need to change the "script" of your day to one of solitude and peace.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="/appointments">
+											<button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button>
+										</a>
+									</div>
+									<small class="text-muted">60 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card mb-4 box-shadow">
+							<img class="card-img-top" src="images/spa4.jpg" alt="Spa Image3">
+							<div class="card-body">
+								<p class="card-text">Experience a rejuvinating pedicure that is sure to give you an "express" ticket to the relaxation you desire.You
+									won't reget it! </p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="/appointments">
+											<button type="button" class="btn btn-sm btn-outline-secondary">Book Appt</button>
+										</a>
+									</div>
+									<small class="text-muted">30 mins</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="row">
+						<div class="col-md-12">
+						</div>
+					</div>
+				</div>
+				<footer>
+					<div class="container">
+						Copyright Project 2 Group 3 &copy;
+					</div>
+				</footer>
+
+				<!-- Custom Script -->
+				<script src="js/author.js" type="text/javascript"></script>
 
 </body>
 

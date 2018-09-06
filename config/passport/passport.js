@@ -32,6 +32,8 @@
     {           
       usernameField : 'email',
       passwordField : 'password',
+      firstName: 'firstname',
+      lastName: 'lastname',
       passReqToCallback : true // allows us to pass back the entire request to the callback
     },
 
